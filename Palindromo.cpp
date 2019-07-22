@@ -1,16 +1,19 @@
-#include <iostream>
-using namespace std;
-int main()
-{
-    cout << "Palabra" << endl;
-    string arr = "alejandro";
-    bool Pal = true;
-    int ini = 0;
-    for (int i = arr.length() - 1; i >= 0; i--)
+    #include <iostream>
+    using namespace std;
+    int main()
     {
-        arr[i] == arr[ini] ? Pal = true : Pal = false;
-        ini++;
+         int n, num=11121, digit, rev = 0;
+         n = num;
+         do
+         {
+             digit = num % 10;
+             rev = (rev * 10) + digit;
+             num = num / 10;
+         } while (num != 0);
+         cout << rev << endl;
+         if (n == rev)
+             cout << " Numero Si Es Palindromo";
+         else
+             cout << " Numero No Es Palindromo";
+        return 0;
     }
-    cout << (Pal == true ? "Palindromo" : "No");
-    return 0;
-}

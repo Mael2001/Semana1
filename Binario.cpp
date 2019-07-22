@@ -1,27 +1,33 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
 using namespace std;
+long Decimal(unsigned long num);
 int main()
+
 {
-    string num = "1011";
-    int nume = 0;
-    int cont = 0;
-    for (int i = num.length() - 1; i >= 0; i--)
-    {
-        if (num[i] == '1')
-        {
-            if (cont == 0)
-            {
-                nume += 1;
-            }
-            else
-            {
-                nume += pow(2, cont);
-            }
-        }
-        cont++;
-    }
-    cout << num << endl;
-    cout << nume << endl;
+    unsigned long num=1011;
+    unsigned long decimal = 0;
+    cout <<"Numero Binario:  "<<num;
+    decimal=Decimal(num);
+    cout <<"\n\nNumero Decimal:  "<< decimal << endl;
     return 0;
+
+}
+
+long Decimal(unsigned long bin_num)
+{
+    unsigned long decimal = 0;
+    int remainder=0, base = 1;
+
+
+    while (bin_num > 0)
+
+    {
+        remainder = bin_num % 10;
+        decimal = decimal + remainder * base;
+        bin_num = bin_num / 10;
+        base = base * 2;
+    }
+
+return decimal;
+
 }
